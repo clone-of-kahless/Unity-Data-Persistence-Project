@@ -50,10 +50,6 @@ public class DataManager : MonoBehaviour
 
             playerName = data.playerName;
             bestScore = data.bestScore;
-        } else
-        {
-            playerName = currentPlayerName;
-            //bestScore = 0; //not needed, apparently automatically 0 if no value specified
-        }
+        } 
     }
 }
