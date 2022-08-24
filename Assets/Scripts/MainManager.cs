@@ -73,12 +73,17 @@ public class MainManager : MonoBehaviour
 
     void UpdateBestScoreText()
     {
-        BestScoreText.text = $"Best Score: {DataManager.Instance.playerName} : BESTSCORE";
+        BestScoreText.text = $"Best Score: {DataManager.Instance.playerName} : {DataManager.Instance.bestScore}";
     }
 
     public void GameOver()
     {
         m_GameOver = true;
         GameOverText.SetActive(true);
+
+        if (m_GameOver && m_Points > DataManager.Instance.bestScore)
+        {
+            DataManager.Instance.bestScore = m_Points;
+        }
     }
 }
