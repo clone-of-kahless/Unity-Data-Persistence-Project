@@ -8,7 +8,7 @@ using TMPro;
 //per the tutorial, it can sometimes be helpful to load UI scripts after other scripts have loaded.
 public class MenuUIHandler : MonoBehaviour
 {
-    public TMP_InputField nameInput;
+    private TMP_InputField nameInput;
     private void Start()
     {
         nameInput = GameObject.Find("Name Input").GetComponent<TMP_InputField>();
@@ -16,7 +16,7 @@ public class MenuUIHandler : MonoBehaviour
 
     private void Update()
     {
-        DataManager.Instance.playerName = nameInput.text;
+        DataManager.Instance.currentPlayerName = nameInput.text;
     }
 
     public void StartNewGame()
